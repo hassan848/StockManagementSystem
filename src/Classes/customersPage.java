@@ -7,6 +7,7 @@ package Classes;
 
 import Inventory_Management_Java_Application.MyConnectionDB;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,6 +23,8 @@ public class customersPage {
     private String contactNumber;
     private String email;
     private String postcode;
+    
+    public customersPage(){};
     
     public customersPage(int id,String fName,String lastName,String cNumber,String email, String postcode){
         this.ID = id;
@@ -117,6 +120,46 @@ public class customersPage {
         } catch (SQLException ex) {
             Logger.getLogger(customersPage.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    
+    //get customer information for digital receipt using orderID
+    public static customersPage getCusomerInfo(int orderID){
+        PreparedStatement st;
+        PreparedStatement st2;
+        ResultSet rs;
+        ResultSet rs2;
+        
+        customersPage customerInfo = new customersPage();
+        
+        String query = "SELECT `customerID` FROM `orders` WHERE `ordersID` = ?";
+        String query2 = "SELECT * FROM `customers` WHERE `CustomerID` = ?";
+        int customerID = 0;
+        
+        try {
+            st = MyConnectionDB.getConnection().prepareStatement(query);
+            st.setInt(1, orderID);
+            rs = st.executeQuery();
+            
+            while(rs.next()){
+                customerID = rs.getInt(1);
+            }
+            
+            st2 = MyConnectionDB.getConnection().prepareStatement(query2);
+            st2.setInt(1, customerID);
+            rs2 = st2.executeQuery();
+            
+            while(rs2.next()){
+                customerInfo = new customersPage(rs2.getInt(1),rs2.getString(2), rs2.getString(3), rs2.getString(4), rs2.getString(5),rs2.getString(6));
+            }
+            
+            return customerInfo;
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(customersPage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return customerInfo;
     }
     
 }

@@ -396,6 +396,7 @@ public class UsersTab extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Select a user", "No User Selected!", 0);
         }else{   
             Classes.UsersPage.deleteUser(jTextFieldUsername.getText());
+            JOptionPane.showMessageDialog(null,"User Deleted", "Delete User",1);
             displayUsersListInJtable();
             jButtonClear1ActionPerformed(null);
         }

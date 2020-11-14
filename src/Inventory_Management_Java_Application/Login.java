@@ -257,6 +257,7 @@ public class Login extends javax.swing.JFrame {
         
         //checking if username and password exist in database via SELECT query
         String query = "SELECT * FROM `userslog` WHERE `Username` = ? AND `UserPassword` = ?";
+        //String loggedUser = jUserNameField.getText();
         
         try {
             st = MyConnectionDB.getConnection().prepareStatement("SELECT * FROM `userslog` WHERE `Username` = ? AND `UserPassword` = ?");
@@ -264,6 +265,7 @@ public class Login extends javax.swing.JFrame {
             st.setString(2, hashPassword);
             rs = st.executeQuery();
             if(rs.next()){
+                
                 //System.out.println(rs.getString("Username"));
                 homeJFrame homePage = new homeJFrame();
                 homePage.setVisible(true);

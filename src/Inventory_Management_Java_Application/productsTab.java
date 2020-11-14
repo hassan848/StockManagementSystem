@@ -160,38 +160,18 @@ public class productsTab extends javax.swing.JFrame {
         );
 
         jTextFieldPname.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jTextFieldPname.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldPnameActionPerformed(evt);
-            }
-        });
 
         jTextFieldStock.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jTextFieldStock.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldStockActionPerformed(evt);
-            }
-        });
 
         jLabel4.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel4.setText("ID:");
 
         jTextFieldPID.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jTextFieldPID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldPIDActionPerformed(evt);
-            }
-        });
 
         jLabel5.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel5.setText("Price:");
 
         jTextFieldPrice.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jTextFieldPrice.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldPriceActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -401,10 +381,6 @@ public class productsTab extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextFieldPnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPnameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldPnameActionPerformed
-
     private void jTableProductsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableProductsMouseClicked
         
         // TODO add your handling code here:
@@ -426,27 +402,22 @@ public class productsTab extends javax.swing.JFrame {
         jTextAreaDescription.setText(jTableProducts.getValueAt(i, 4).toString());
     }//GEN-LAST:event_jTableProductsMouseClicked
 
-    private void jTextFieldStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldStockActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldStockActionPerformed
-
-    private void jTextFieldPIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPIDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldPIDActionPerformed
-
-    private void jTextFieldPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPriceActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldPriceActionPerformed
-
     private void jButtonEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditActionPerformed
         // Checking if a product has been selected from the Jtable
         if(!jTableProducts.getSelectionModel().isSelectionEmpty()){
             //getting row for selected product
             int i = jTableProducts.getSelectedRow();
+         
+            
             //creating editProductForm object to set values of selected product into edit form
             editProductJForm editProduct = new editProductJForm();
            
-            editProduct.jComboBoxPtype.setSelectedItem(jTableProducts.getValueAt(i, 6).toString());
+            if(jTableProducts.getValueAt(i, 6)==null){
+                editProduct.jComboBoxPtype.setSelectedItem("");
+            }else{
+                editProduct.jComboBoxPtype.setSelectedItem(jTableProducts.getValueAt(i, 6).toString());
+            }
+           
             editProduct.productID = Integer.parseInt(jTableProducts.getValueAt(i, 0).toString());
             editProduct.jTextFieldName.setText(jTableProducts.getValueAt(i, 1).toString());
             editProduct.jTextFieldPrice.setText(jTableProducts.getValueAt(i, 3).toString().substring(1));
@@ -655,7 +626,7 @@ public class productsTab extends javax.swing.JFrame {
         return listProducts;
     }
     
-    
+   
     
     public static void displayProductsListInJtable(){
         ArrayList<Classes.productsPage> listProducts = listOfProducts();

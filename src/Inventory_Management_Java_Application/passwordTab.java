@@ -135,6 +135,7 @@ public class passwordTab extends javax.swing.JFrame {
                 Classes.UsersPage newUser = new Classes.UsersPage(newUsername, jPasswordField1.getText(), newName, newNumber, newEmail, newUserType);
                 Classes.UsersPage.insertUser(newUser);
                 UsersTab.displayUsersListInJtable();
+                JOptionPane.showMessageDialog(null, "New User Added", "Add User",1);
                 this.dispose();
             }else{
                 JOptionPane.showMessageDialog(null, "The passwords entered don't match!", "Invalid Passwords", 0);

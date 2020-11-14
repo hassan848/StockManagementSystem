@@ -9,6 +9,7 @@ import Inventory_Management_Java_Application.MyConnectionDB;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -25,6 +26,8 @@ public class productsPage {
     private String productDescription;
     private int productTypeID;
     private byte[] productImage;
+    
+    public productsPage(){}
     
     public productsPage(int PID, String name, int stock, double price, String pDescription, int productTypeID, byte[] image){
         this.productName = name;
@@ -84,6 +87,30 @@ public class productsPage {
         }
         return null;
     }
+    
+    
+    //check if productname is already in database
+    public static boolean checkProduct(String productName){
+        PreparedStatement st;
+        ResultSet rs;
+        
+        String query = "SELECT `productName` FROM `products` WHERE `productName` = ?";
+        try {
+            st = MyConnectionDB.getConnection().prepareStatement(query);
+            st.setString(1, productName);
+            rs = st.executeQuery();
+            
+            if(rs.next()){
+                return true;
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(productsPage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return false;
+    }
+    
     
     public static void insertProduct(productsPage newProduct){
         PreparedStatement st;
@@ -175,6 +202,40 @@ public class productsPage {
         }
     }
     
+    
+    //show products based on the productTypeID
+    public ArrayList<productsPage> productsFromProductTypeID(int productTypeID){
+        
+        PreparedStatement st;
+        ResultSet rs;
+        
+        ArrayList<productsPage> productsTypeList = new ArrayList<>();
+        
+        String query = "SELECT `productID`, `productName`, `remainingStock`, `productPrice`, `productDescription`, `productImage` FROM `products` WHERE `productTypeID` = ?";
+        
+        try {
+            st = MyConnectionDB.getConnection().prepareStatement(query);
+            st.setInt(1, productTypeID);
+            rs = st.executeQuery();
+            
+            productsPage productFromTypes;
+            
+            while(rs.next()){
+                productFromTypes = new productsPage(rs.getInt(1),rs.getString(2),rs.getInt(3), rs.getDouble(4),rs.getString(5), 0,rs.getBytes(6));
+                
+                //adding objects to the list of products
+                productsTypeList.add(productFromTypes);
+            }
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(productsPage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return productsTypeList;
+        
+    }
+        
     
     
     

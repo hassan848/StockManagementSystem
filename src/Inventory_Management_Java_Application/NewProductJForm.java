@@ -317,56 +317,68 @@ public class NewProductJForm extends javax.swing.JFrame {
     
     private void jButtonAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddActionPerformed
         // TODO add your handling code here:
-        
-        if(checkIfFieldsEmpty()){
-            String productName = jTextFieldName.getText();
-            Integer quantity = Integer.parseInt(jTextFieldStock.getText());
-            String description = jTextAreaDescription.getText();
+        if(jTextFieldName.getText().length()<25){
+            
+            if(checkIfFieldsEmpty()){
 
-            //get productTypeID 
-            Classes.manageProductType productType = new Classes.manageProductType();
-            HashMap<String, Integer> map = productType.getAllProductTypes();
-            int productTypeID = map.get(jComboBoxPtype.getSelectedItem().toString());
+                Boolean checkPname = Classes.productsPage.checkProduct(jTextFieldName.getText());
+                //System.out.println("LOOOL"+checkPname);
+                if(!checkPname){
 
-            //get Image path convert to byte and add to DB
-            byte[] productImage;
+                    String productName = jTextFieldName.getText();
+                    Integer quantity = Integer.parseInt(jTextFieldStock.getText());
+                    String description = jTextAreaDescription.getText();
 
-            double productPrice = -1;
+                    //get productTypeID 
+                    Classes.manageProductType productType = new Classes.manageProductType();
+                    HashMap<String, Integer> map = productType.getAllProductTypes();
+                    int productTypeID = map.get(jComboBoxPtype.getSelectedItem().toString());
 
-            try{
-                productPrice = Double.parseDouble(jTextFieldPrice.getText());
-            } catch(NumberFormatException exception){
-                JOptionPane.showMessageDialog(null, "Enter numerical price", "Please enter a numerical value", 0);
-            }
+                    //get Image path convert to byte and add to DB
+                    byte[] productImage;
 
-            //checking if price is correct input and this is where insert product function will happen.
-            if(productPrice!=-1){
-                if(updatedImagePath!=null){
-                    Path myPath = Paths.get(updatedImagePath);
-                    try {
-                        //convert image path to bytes
-                        productImage = Files.readAllBytes(myPath);
+                    double productPrice = -1;
 
-                        //create object for newProduct
-                        Classes.productsPage newProduct = new Classes.productsPage(0, productName, quantity, productPrice, description, productTypeID, productImage);
-                        //Call insertProduct function on newProduct Object
-                        Classes.productsPage.insertProduct(newProduct);
-                        clearFields();
-                        JOptionPane.showMessageDialog(null, "New Product Added");
-                        
-                        //close window and display new updated products table
-                        this.dispose();
-                        productsTab.displayProductsListInJtable();
-
-                    } catch (IOException ex) {
-                        Logger.getLogger(NewProductJForm.class.getName()).log(Level.SEVERE, null, ex);
+                    try{
+                        productPrice = Double.parseDouble(jTextFieldPrice.getText());
+                    } catch(NumberFormatException exception){
+                        JOptionPane.showMessageDialog(null, "Enter numerical price", "Please enter a numerical value", 0);
                     }
 
+                    //checking if price is correct input and this is where insert product function will happen.
+                    if(productPrice!=-1){
+                        if(updatedImagePath!=null){
+                            Path myPath = Paths.get(updatedImagePath);
+                            try {
+                                //convert image path to bytes
+                                productImage = Files.readAllBytes(myPath);
+
+                                //create object for newProduct
+                                Classes.productsPage newProduct = new Classes.productsPage(0, productName, quantity, productPrice, description, productTypeID, productImage);
+                                //Call insertProduct function on newProduct Object
+                                Classes.productsPage.insertProduct(newProduct);
+                                clearFields();
+                                JOptionPane.showMessageDialog(null, "New Product Added");
+
+                                //close window and display new updated products table
+                                this.dispose();
+                                productsTab.displayProductsListInJtable();
+
+                            } catch (IOException ex) {
+                                Logger.getLogger(NewProductJForm.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+
+                        }else{
+                            JOptionPane.showMessageDialog(null, "Please Browse Product Image", "No Image Selected", 0);
+                        }
+                    }
                 }else{
-                    JOptionPane.showMessageDialog(null, "Please Browse Product Image", "No Image Selected", 0);
+                    JOptionPane.showMessageDialog(null, "Please provide another name for product", "Product Name Already exists", 0);
                 }
             }
-        }
+        }else{
+            JOptionPane.showMessageDialog(null, "Product Name Too Long", "Product Name Is Over 25 Characters", 0);
+        }    
     }//GEN-LAST:event_jButtonAddActionPerformed
 
     private void jTextFieldStockKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldStockKeyTyped

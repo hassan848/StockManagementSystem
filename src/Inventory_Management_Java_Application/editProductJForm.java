@@ -316,63 +316,67 @@ public class editProductJForm extends javax.swing.JFrame {
     
     private void jButtonEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditActionPerformed
         // TODO add your handling code here:
-        
-        if(checkIfFieldsEmpty()){
-            String productName = jTextFieldName.getText();
-            Integer quantity = Integer.parseInt(jTextFieldStock.getText());
-            String description = jTextAreaDescription.getText();
+        if(jTextFieldName.getText().length()<25){
 
-            //get productTypeID 
-            Classes.manageProductType productType = new Classes.manageProductType();
-            HashMap<String, Integer> map = productType.getAllProductTypes();
-            int productTypeID = map.get(jComboBoxPtype.getSelectedItem().toString());
+            if(checkIfFieldsEmpty()){
+                String productName = jTextFieldName.getText();
+                Integer quantity = Integer.parseInt(jTextFieldStock.getText());
+                String description = jTextAreaDescription.getText();
 
-            //get Image path convert to byte and add to DB
-            byte[] productImage;
+                //get productTypeID 
+                Classes.manageProductType productType = new Classes.manageProductType();
+                HashMap<String, Integer> map = productType.getAllProductTypes();
+                int productTypeID = map.get(jComboBoxPtype.getSelectedItem().toString());
 
-            double productPrice = -1;
+                //get Image path convert to byte and add to DB
+                byte[] productImage;
 
-            try{
-                productPrice = Double.parseDouble(jTextFieldPrice.getText());
-            } catch(NumberFormatException exception){
-                JOptionPane.showMessageDialog(null, "Enter numerical price", "Please enter a numerical value", 0);
-            }
+                double productPrice = -1;
 
-            //checking if price is correct input and this is where insert product function will happen.
-            if(productPrice!=-1){
-                if(updatedImagePath!=null){
-                    Path myPath = Paths.get(updatedImagePath);
-                    try {
-                        //convert image path to bytes
-                        productImage = Files.readAllBytes(myPath);
+                try{
+                    productPrice = Double.parseDouble(jTextFieldPrice.getText());
+                } catch(NumberFormatException exception){
+                    JOptionPane.showMessageDialog(null, "Enter numerical price", "Please enter a numerical value", 0);
+                }
 
-                        //create object for newProduct
-                        Classes.productsPage editProduct = new Classes.productsPage(productID, productName, quantity, productPrice, description, productTypeID, productImage);
-                        //Call editProduct function on newProduct Object
-                        Classes.productsPage.editProduct(editProduct,true);
-                        
+                //checking if price is correct input and this is where insert product function will happen.
+                if(productPrice!=-1){
+                    if(updatedImagePath!=null){
+                        Path myPath = Paths.get(updatedImagePath);
+                        try {
+                            //convert image path to bytes
+                            productImage = Files.readAllBytes(myPath);
+
+                            //create object for newProduct
+                            Classes.productsPage editProduct = new Classes.productsPage(productID, productName, quantity, productPrice, description, productTypeID, productImage);
+                            //Call editProduct function on newProduct Object
+                            Classes.productsPage.editProduct(editProduct,true);
+
+                            JOptionPane.showMessageDialog(null, "Product Has Been Edited");
+                            clearFields();
+                            //close window and display new updated products table
+                            this.dispose();
+                            productsTab.displayProductsListInJtable();
+
+                        } catch (IOException ex) {
+                            Logger.getLogger(editProductJForm.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+
+                    }else{
+                        Classes.productsPage editProduct1 = new Classes.productsPage(productID, productName, quantity, productPrice, description, productTypeID, null);
+                        Classes.productsPage.editProduct(editProduct1, false);
                         JOptionPane.showMessageDialog(null, "Product Has Been Edited");
+
                         clearFields();
                         //close window and display new updated products table
                         this.dispose();
                         productsTab.displayProductsListInJtable();
-
-                    } catch (IOException ex) {
-                        Logger.getLogger(editProductJForm.class.getName()).log(Level.SEVERE, null, ex);
                     }
-
-                }else{
-                    Classes.productsPage editProduct1 = new Classes.productsPage(productID, productName, quantity, productPrice, description, productTypeID, null);
-                    Classes.productsPage.editProduct(editProduct1, false);
-                    JOptionPane.showMessageDialog(null, "Product Has Been Edited");
-                    
-                    clearFields();
-                    //close window and display new updated products table
-                    this.dispose();
-                    productsTab.displayProductsListInJtable();
                 }
             }
-        }
+        }else{
+            JOptionPane.showMessageDialog(null, "Product Name Too Long", "Product Name Is Over 25 Characters", 0);
+        } 
     }//GEN-LAST:event_jButtonEditActionPerformed
 
     private void jTextFieldStockKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldStockKeyTyped
