@@ -167,9 +167,7 @@ public class UsersPage {
             st.setString(3, existingUser.username);
             
             st.executeUpdate();
-           // System.out.println(existingUser.username);
-           // System.out.println(hashMyPass.getSalt());
-           // System.out.println(hashMyPass.getHash());
+           
         } catch (SQLException ex) {
             Logger.getLogger(UsersPage.class.getName()).log(Level.SEVERE, null, ex);
         }

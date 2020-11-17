@@ -118,20 +118,10 @@ public class Login extends javax.swing.JFrame {
 
         jUserNameField.setBackground(new java.awt.Color(255, 255, 255));
         jUserNameField.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jUserNameField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jUserNameFieldActionPerformed(evt);
-            }
-        });
 
         jPasswordField1.setBackground(new java.awt.Color(255, 255, 255));
         jPasswordField1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jPasswordField1.setForeground(new java.awt.Color(0, 0, 0));
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
-            }
-        });
 
         jButton1.setBackground(new java.awt.Color(153, 153, 153));
         jButton1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -140,11 +130,6 @@ public class Login extends javax.swing.JFrame {
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
-            }
-        });
-        jButton1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                jButton1KeyReleased(evt);
             }
         });
 
@@ -215,14 +200,6 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jUserNameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUserNameFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jUserNameFieldActionPerformed
-
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
-
     private void jLabelCloseFrameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelCloseFrameMouseClicked
         // TODO add your handling code here:
         System.exit(0);
@@ -234,10 +211,6 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelMinMouseMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        System.out.println(jUserNameField.getText());
-        System.out.println(String.valueOf(jPasswordField1.getPassword()));
-        //JOptionPane.showMessageDialog(this,jPasswordField1.getText());
         
         String hashPassword = null;
         
@@ -256,8 +229,6 @@ public class Login extends javax.swing.JFrame {
         }
         
         //checking if username and password exist in database via SELECT query
-        String query = "SELECT * FROM `userslog` WHERE `Username` = ? AND `UserPassword` = ?";
-        //String loggedUser = jUserNameField.getText();
         
         try {
             st = MyConnectionDB.getConnection().prepareStatement("SELECT * FROM `userslog` WHERE `Username` = ? AND `UserPassword` = ?");
@@ -276,7 +247,7 @@ public class Login extends javax.swing.JFrame {
                 jPasswordField1.setText("");
                 this.dispose();
             }else{
-                JOptionPane.showMessageDialog(null, "SORRY CANT LOGIN!","incorrect",2);
+                JOptionPane.showMessageDialog(null, "Incorrect Login Details!","Incorrect Details",2);
             }
         } catch (SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
@@ -294,10 +265,6 @@ public class Login extends javax.swing.JFrame {
         this.setVisible(false);
         
     }//GEN-LAST:event_jLabelNewAccountMouseClicked
-
-    private void jButton1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton1KeyReleased
-
-    }//GEN-LAST:event_jButton1KeyReleased
 
     /**
      * @param args the command line arguments

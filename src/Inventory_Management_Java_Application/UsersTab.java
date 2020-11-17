@@ -86,11 +86,6 @@ public class UsersTab extends javax.swing.JFrame {
         jLabel5.setText("User Type:");
 
         jTextFieldUsername.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jTextFieldUsername.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldUsernameActionPerformed(evt);
-            }
-        });
 
         jTextFieldName.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
 
@@ -139,11 +134,6 @@ public class UsersTab extends javax.swing.JFrame {
 
         jComboBoxUserType.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jComboBoxUserType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--- Select User-Type ---", "Admin User", "Regular User" }));
-        jComboBoxUserType.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxUserTypeActionPerformed(evt);
-            }
-        });
 
         jButtonClear1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jButtonClear1.setText("Clear");
@@ -292,7 +282,7 @@ public class UsersTab extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButtonChangePassword1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(139, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -308,14 +298,6 @@ public class UsersTab extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jTextFieldUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldUsernameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldUsernameActionPerformed
-
-    private void jComboBoxUserTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxUserTypeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxUserTypeActionPerformed
 
     public boolean checkIfFieldsEmpty(){
         if(jTextFieldUsername.getText().equals("") || jTextFieldName.getText().equals("") || jTextFieldNumber.getText().equals("") || jTextFieldEmail.getText().equals("")){

@@ -165,55 +165,30 @@ public class customersTab1 extends javax.swing.JFrame {
         jLabel1.setText("First Name:");
 
         jTextFieldFname.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jTextFieldFname.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldFnameActionPerformed(evt);
-            }
-        });
 
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Last Name:");
 
         jTextFieldLname1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jTextFieldLname1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldLname1ActionPerformed(evt);
-            }
-        });
 
         jLabel3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Contact Number:");
 
         jTextCnumber.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jTextCnumber.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextCnumberActionPerformed(evt);
-            }
-        });
 
         jLabel4.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Email:");
 
         jTextEmail1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jTextEmail1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextEmail1ActionPerformed(evt);
-            }
-        });
 
         jLabel5.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Postcode:");
 
         jTextPostcode.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jTextPostcode.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextPostcodeActionPerformed(evt);
-            }
-        });
 
         jClearButton.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jClearButton.setText("Clear");
@@ -322,7 +297,7 @@ public class customersTab1 extends javax.swing.JFrame {
                     .addComponent(jButtonAddCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonEditCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonDeleteCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 41, Short.MAX_VALUE))
+                .addGap(0, 11, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -350,7 +325,7 @@ public class customersTab1 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -372,22 +347,6 @@ public class customersTab1 extends javax.swing.JFrame {
         jSearchButtonActionPerformed(null);
         
     }//GEN-LAST:event_jSearchTextField1KeyReleased
-
-    private void jTextFieldFnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldFnameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldFnameActionPerformed
-
-    private void jTextFieldLname1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldLname1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldLname1ActionPerformed
-
-    private void jTextCnumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextCnumberActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextCnumberActionPerformed
-
-    private void jTextEmail1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextEmail1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextEmail1ActionPerformed
 
     private void jTableCustomersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableCustomersMouseClicked
         int i = jTableCustomers.getSelectedRow();
@@ -490,10 +449,6 @@ public class customersTab1 extends javax.swing.JFrame {
 
     
     
-    private void jTextPostcodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextPostcodeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextPostcodeActionPerformed
-
     private void jClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jClearButtonActionPerformed
         // TODO add your handling code here:
         jTextFieldFname.setText("");

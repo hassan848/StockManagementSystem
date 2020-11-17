@@ -15,6 +15,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -36,16 +37,22 @@ public class checkSaltedHash {
         MessageDigest newDigest = MessageDigest.getInstance("SHA-256");
         newDigest.reset();
         String saltHex = getSaltFromDB();
-        byte[] salt = hexStringToByteArray(saltHex);
         
-        //this.saltToHash = byteArrayToHexString(salt);
-    
-        newDigest.update(salt);
-        byte[] newHash = newDigest.digest(this.passToHash.getBytes());
-        
-        //passToHash.hashedPass = byteArrayToHexString(newHash);
-        //this.hashedPass = byteArrayToHexString(newHash);
-        return byteArrayToHexString(newHash);
+        if(saltHex==null){
+            return null;
+        }else{
+            
+            byte[] salt = hexStringToByteArray(saltHex);
+
+            //this.saltToHash = byteArrayToHexString(salt);
+
+            newDigest.update(salt);
+            byte[] newHash = newDigest.digest(this.passToHash.getBytes());
+
+            //passToHash.hashedPass = byteArrayToHexString(newHash);
+            //this.hashedPass = byteArrayToHexString(newHash);
+            return byteArrayToHexString(newHash);
+        }    
     }
     
     private final static char[] hexadecimalArray = "0123456789ABCDEF".toCharArray();
@@ -82,7 +89,9 @@ public class checkSaltedHash {
             rs = st.executeQuery();
             if(rs.next()){
                 saltHex = rs.getString("salt");
+                
             }
+            
         } catch (SQLException ex) {
             Logger.getLogger(checkSaltedHash.class.getName()).log(Level.SEVERE, null, ex);
         }

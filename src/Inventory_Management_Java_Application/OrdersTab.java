@@ -33,17 +33,9 @@ public class OrdersTab extends javax.swing.JFrame {
         
         setCustomerComboBox();
         productTypeComboBox();
-        //virtualReceiptTable.setShowGrid(false);
-        //virtualReceiptTable.setAutoCreateRowSorter(true);
-        //virtualReceiptTable.setIntercellSpacing(new Dimension(0,0));
-        //TableCellRenderer baseRenderer = virtualReceiptTable.getTableHeader().getDefaultRenderer();
-        //virtualReceiptTable.getTableHeader().setDefaultRenderer(new TableHeaderRenderer(baseRenderer));
+        
         String[] JtableHeadings = {"Product ID","Product Name","Remaining Stock"};
-        //dtm = new DefaultTableModel(0, 0);
-		//final String header[] = new String[] { "Item", "Qty", "Price", "Spinner" };
-	//dtm.setColumnIdentifiers(JtableHeadings);
-	//dtm.addRow(JtableHeadings);
-		//table = new JTable();
+        
 	DefaultTableModel model = (DefaultTableModel)virtualReceiptTable.getModel();
         model.addRow(new Object[]{"Item Name","Price","Quantity","Total price"});
         model.addRow(new Object[]{});
@@ -127,11 +119,6 @@ public class OrdersTab extends javax.swing.JFrame {
 
         customerComboBox.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         customerComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "   -----Select-Customer-----" }));
-        customerComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                customerComboBoxActionPerformed(evt);
-            }
-        });
 
         jLabel3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel3.setText("Product Type:");
@@ -270,12 +257,6 @@ public class OrdersTab extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
         jLabel4.setText("Total :");
 
-        jTextFieldFinalPrice.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldFinalPriceActionPerformed(evt);
-            }
-        });
-
         jButtonMakeOrder.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jButtonMakeOrder.setText("Make Order");
         jButtonMakeOrder.addActionListener(new java.awt.event.ActionListener() {
@@ -348,10 +329,6 @@ public class OrdersTab extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void customerComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customerComboBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_customerComboBoxActionPerformed
-
     public void getFinalPriceOfAll(){
         double finalPrice = 0;
         for(int i=2; i<virtualReceiptTable.getModel().getRowCount(); i++){
@@ -368,9 +345,6 @@ public class OrdersTab extends javax.swing.JFrame {
             Classes.manageOrdersTab customers = new Classes.manageOrdersTab();
             HashMap<String, Integer> map = customers.getProductTypes();
 
-            //displayProductsTable(Integer.valueOf(map.get(productTypeComboBox.toString()).toString()));
-            //System.out.println(productTypeComboBox.getSelectedItem().toString());
-            //System.out.println(map.get(productTypeComboBox.getSelectedItem().toString()));
             displayProductsTable(map.get(productTypeComboBox.getSelectedItem().toString()));
         }
     }//GEN-LAST:event_productTypeComboBoxActionPerformed
@@ -458,10 +432,6 @@ public class OrdersTab extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jButtonAddItemActionPerformed
-
-    private void jTextFieldFinalPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldFinalPriceActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldFinalPriceActionPerformed
 
     private void jButtonRemoveItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRemoveItemActionPerformed
         if(!virtualReceiptTable.getSelectionModel().isSelectionEmpty()){

@@ -20,7 +20,7 @@ public class homeJFrame extends javax.swing.JFrame {
         initComponents();
         
         ImageIcon backgroundImage = new ImageIcon("src\\Images\\Laptop-repair.png");
-        jLabel1background.setIcon(backgroundImage);
+        jLabel1.setIcon(backgroundImage);
     }
 
     /**
@@ -32,24 +32,375 @@ public class homeJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1background = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        rSButtonStockLevels = new rojerusan.RSButtonPane();
+        jLabel3 = new javax.swing.JLabel();
+        rSButtonManageUsers = new rojerusan.RSButtonPane();
+        jLabel7 = new javax.swing.JLabel();
+        rSButtonManageProducts = new rojerusan.RSButtonPane();
+        jLabel8 = new javax.swing.JLabel();
+        rSButtonMakeOrder = new rojerusan.RSButtonPane();
+        jLabel9 = new javax.swing.JLabel();
+        rSButtonCustomers = new rojerusan.RSButtonPane();
+        jLabel10 = new javax.swing.JLabel();
+        rSButtonProductTypes = new rojerusan.RSButtonPane();
+        jLabel11 = new javax.swing.JLabel();
+        rSButtonViewOrders = new rojerusan.RSButtonPane();
+        jLabel13 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1background, javax.swing.GroupLayout.DEFAULT_SIZE, 1205, Short.MAX_VALUE)
+        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 28)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Hamburger_icon.png"))); // NOI18N
+        jLabel2.setText(" Navigation");
+
+        rSButtonStockLevels.setBackground(new java.awt.Color(102, 102, 102));
+        rSButtonStockLevels.setColorNormal(new java.awt.Color(102, 102, 102));
+        rSButtonStockLevels.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rSButtonStockLevelsMouseClicked(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 28)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/stock level2.png"))); // NOI18N
+        jLabel3.setText("View Stock Levels");
+
+        javax.swing.GroupLayout rSButtonStockLevelsLayout = new javax.swing.GroupLayout(rSButtonStockLevels);
+        rSButtonStockLevels.setLayout(rSButtonStockLevelsLayout);
+        rSButtonStockLevelsLayout.setHorizontalGroup(
+            rSButtonStockLevelsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSButtonStockLevelsLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1background, javax.swing.GroupLayout.DEFAULT_SIZE, 719, Short.MAX_VALUE)
+        rSButtonStockLevelsLayout.setVerticalGroup(
+            rSButtonStockLevelsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)
         );
 
-        pack();
+        rSButtonManageUsers.setBackground(new java.awt.Color(102, 102, 102));
+        rSButtonManageUsers.setColorNormal(new java.awt.Color(102, 102, 102));
+        rSButtonManageUsers.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rSButtonManageUsersMouseClicked(evt);
+            }
+        });
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 28)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/manage User3.png"))); // NOI18N
+        jLabel7.setText("Manage Users");
+
+        javax.swing.GroupLayout rSButtonManageUsersLayout = new javax.swing.GroupLayout(rSButtonManageUsers);
+        rSButtonManageUsers.setLayout(rSButtonManageUsersLayout);
+        rSButtonManageUsersLayout.setHorizontalGroup(
+            rSButtonManageUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSButtonManageUsersLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        rSButtonManageUsersLayout.setVerticalGroup(
+            rSButtonManageUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)
+        );
+
+        rSButtonManageProducts.setBackground(new java.awt.Color(102, 102, 102));
+        rSButtonManageProducts.setColorNormal(new java.awt.Color(102, 102, 102));
+        rSButtonManageProducts.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rSButtonManageProductsMouseClicked(evt);
+            }
+        });
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 28)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/products.png"))); // NOI18N
+        jLabel8.setText("Manage Products");
+
+        javax.swing.GroupLayout rSButtonManageProductsLayout = new javax.swing.GroupLayout(rSButtonManageProducts);
+        rSButtonManageProducts.setLayout(rSButtonManageProductsLayout);
+        rSButtonManageProductsLayout.setHorizontalGroup(
+            rSButtonManageProductsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSButtonManageProductsLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        rSButtonManageProductsLayout.setVerticalGroup(
+            rSButtonManageProductsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)
+        );
+
+        rSButtonMakeOrder.setBackground(new java.awt.Color(102, 102, 102));
+        rSButtonMakeOrder.setColorNormal(new java.awt.Color(102, 102, 102));
+        rSButtonMakeOrder.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rSButtonMakeOrderMouseClicked(evt);
+            }
+        });
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 28)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/shopping cart.png"))); // NOI18N
+        jLabel9.setText("Make Order");
+
+        javax.swing.GroupLayout rSButtonMakeOrderLayout = new javax.swing.GroupLayout(rSButtonMakeOrder);
+        rSButtonMakeOrder.setLayout(rSButtonMakeOrderLayout);
+        rSButtonMakeOrderLayout.setHorizontalGroup(
+            rSButtonMakeOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSButtonMakeOrderLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        rSButtonMakeOrderLayout.setVerticalGroup(
+            rSButtonMakeOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(rSButtonMakeOrderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel9)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        rSButtonCustomers.setBackground(new java.awt.Color(102, 102, 102));
+        rSButtonCustomers.setColorNormal(new java.awt.Color(102, 102, 102));
+        rSButtonCustomers.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rSButtonCustomersMouseClicked(evt);
+            }
+        });
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 28)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/customer Icon.png"))); // NOI18N
+        jLabel10.setText("Manage Customers");
+        jLabel10.setIconTextGap(-5);
+
+        javax.swing.GroupLayout rSButtonCustomersLayout = new javax.swing.GroupLayout(rSButtonCustomers);
+        rSButtonCustomers.setLayout(rSButtonCustomersLayout);
+        rSButtonCustomersLayout.setHorizontalGroup(
+            rSButtonCustomersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSButtonCustomersLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        rSButtonCustomersLayout.setVerticalGroup(
+            rSButtonCustomersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)
+        );
+
+        rSButtonProductTypes.setBackground(new java.awt.Color(102, 102, 102));
+        rSButtonProductTypes.setColorNormal(new java.awt.Color(102, 102, 102));
+        rSButtonProductTypes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rSButtonProductTypesMouseClicked(evt);
+            }
+        });
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 28)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/product type icon.png"))); // NOI18N
+        jLabel11.setText(" Product Types");
+
+        javax.swing.GroupLayout rSButtonProductTypesLayout = new javax.swing.GroupLayout(rSButtonProductTypes);
+        rSButtonProductTypes.setLayout(rSButtonProductTypesLayout);
+        rSButtonProductTypesLayout.setHorizontalGroup(
+            rSButtonProductTypesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSButtonProductTypesLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        rSButtonProductTypesLayout.setVerticalGroup(
+            rSButtonProductTypesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(rSButtonProductTypesLayout.createSequentialGroup()
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 2, Short.MAX_VALUE))
+        );
+
+        rSButtonViewOrders.setBackground(new java.awt.Color(102, 102, 102));
+        rSButtonViewOrders.setColorNormal(new java.awt.Color(102, 102, 102));
+        rSButtonViewOrders.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rSButtonViewOrdersMouseClicked(evt);
+            }
+        });
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 28)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/view orders icon.png"))); // NOI18N
+        jLabel13.setText("View Orders");
+
+        javax.swing.GroupLayout rSButtonViewOrdersLayout = new javax.swing.GroupLayout(rSButtonViewOrders);
+        rSButtonViewOrders.setLayout(rSButtonViewOrdersLayout);
+        rSButtonViewOrdersLayout.setHorizontalGroup(
+            rSButtonViewOrdersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSButtonViewOrdersLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        rSButtonViewOrdersLayout.setVerticalGroup(
+            rSButtonViewOrdersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(rSButtonViewOrdersLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel13)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(rSButtonStockLevels, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addComponent(jLabel2)
+                .addContainerGap(103, Short.MAX_VALUE))
+            .addComponent(rSButtonManageUsers, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)
+            .addComponent(rSButtonMakeOrder, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)
+            .addComponent(rSButtonCustomers, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)
+            .addComponent(rSButtonProductTypes, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)
+            .addComponent(rSButtonManageProducts, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)
+            .addComponent(rSButtonViewOrders, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addGap(33, 33, 33)
+                .addComponent(rSButtonManageProducts, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(rSButtonManageUsers, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rSButtonMakeOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rSButtonCustomers, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rSButtonProductTypes, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rSButtonViewOrders, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rSButtonStockLevels, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(20, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 720));
+
+        jPanel2.setBackground(new java.awt.Color(102, 102, 102));
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/home34.png"))); // NOI18N
+        jLabel12.setText("Homepage");
+        jLabel12.setIconTextGap(300);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 738, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 122, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel12)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 0, 860, 60));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 860, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 660, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 60, 860, 660));
+
+        setSize(new java.awt.Dimension(1227, 758));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    //call the products Tab
+    private void rSButtonManageProductsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rSButtonManageProductsMouseClicked
+        productsTab manageProducts = new productsTab();
+        manageProducts.setVisible(true);
+        manageProducts.pack();
+        manageProducts.setLocationRelativeTo(null);
+        manageProducts.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    }//GEN-LAST:event_rSButtonManageProductsMouseClicked
+
+    //call the users Tab
+    private void rSButtonManageUsersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rSButtonManageUsersMouseClicked
+       UsersTab manageUsers = new UsersTab();
+       manageUsers.setVisible(true);
+       manageUsers.pack();
+       manageUsers.setLocationRelativeTo(null);
+       manageUsers.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    }//GEN-LAST:event_rSButtonManageUsersMouseClicked
+
+    //call the Make Order Tab
+    private void rSButtonMakeOrderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rSButtonMakeOrderMouseClicked
+        OrdersTab makeOrders = new OrdersTab();
+        makeOrders.setVisible(true);
+        makeOrders.pack();
+        makeOrders.setLocationRelativeTo(null);
+        makeOrders.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    }//GEN-LAST:event_rSButtonMakeOrderMouseClicked
+
+    private void rSButtonCustomersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rSButtonCustomersMouseClicked
+        //call the customers record page
+        customersTab1 manageCustomers = new customersTab1();
+        manageCustomers.setVisible(true);
+        manageCustomers.pack();
+        manageCustomers.setLocationRelativeTo(null);
+        manageCustomers.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    }//GEN-LAST:event_rSButtonCustomersMouseClicked
+
+    private void rSButtonProductTypesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rSButtonProductTypesMouseClicked
+        //call the ProductTypes page
+        manageProductTypes productTypes = new manageProductTypes();
+        productTypes.setVisible(true);
+        productTypes.pack();
+        productTypes.setLocationRelativeTo(null);
+        productTypes.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    }//GEN-LAST:event_rSButtonProductTypesMouseClicked
+
+    private void rSButtonViewOrdersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rSButtonViewOrdersMouseClicked
+        //call the viewOrders page
+        ViewOrdersTab viewOrders = new ViewOrdersTab();
+        viewOrders.setVisible(true);
+        viewOrders.pack();
+        viewOrders.setLocationRelativeTo(null);
+        viewOrders.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    }//GEN-LAST:event_rSButtonViewOrdersMouseClicked
+
+    private void rSButtonStockLevelsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rSButtonStockLevelsMouseClicked
+        //calls the viewStockLevels class
+        viewStockLevels stockLevels = new viewStockLevels();
+        stockLevels.setVisible(true);
+        stockLevels.pack();
+        stockLevels.setLocationRelativeTo(null);
+        stockLevels.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    }//GEN-LAST:event_rSButtonStockLevelsMouseClicked
+
+    
     /**
      * @param args the command line arguments
      */
@@ -86,6 +437,31 @@ public class homeJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1background;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private rojerusan.RSButtonPane rSButtonCustomers;
+    private rojerusan.RSButtonPane rSButtonMakeOrder;
+    private rojerusan.RSButtonPane rSButtonManageProducts;
+    private rojerusan.RSButtonPane rSButtonManageUsers;
+    private rojerusan.RSButtonPane rSButtonPane2;
+    private rojerusan.RSButtonPane rSButtonPane3;
+    private rojerusan.RSButtonPane rSButtonPane4;
+    private rojerusan.RSButtonPane rSButtonProductTypes;
+    private rojerusan.RSButtonPane rSButtonStockLevels;
+    private rojerusan.RSButtonPane rSButtonViewOrders;
     // End of variables declaration//GEN-END:variables
 }
